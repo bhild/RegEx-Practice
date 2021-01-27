@@ -1,6 +1,6 @@
 package RegEx;
 
-public class WarehouseItems {
+public class WarehouseItemValidator {
 	private String itemId;
 	private String itemDescription;
 	private String itemName;
