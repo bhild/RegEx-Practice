@@ -1,6 +1,9 @@
 package RegEx;
 
+import java.util.ArrayList;
+
 public class WarehouseItemList {
+	private ArrayList<String[]> itemList = new ArrayList<String[]>();
 	public WarehouseItemList() {
 		// TODO Auto-generated constructor stub
 	}
@@ -12,5 +15,13 @@ public class WarehouseItemList {
 	}
 	public boolean isValidDescription(String des) {
 		return des.matches("^(([a-zA-Z]|[, ]){5,}[.!;?])+$");
+	}
+	public void addItem(String id, String name, String description) {
+		if (isValidId(id)&&isValidDescription(description)&&isValidName(name)) {
+			itemList.add(new String[] {name,id,description});
+		}else {
+			System.err.println("invalid WarehouseItem:\nname:" + name + " - " + isValidName(name)+"\nid:"+
+					id + " - " + isValidId(id)+"\ndescription:"+ description + " - " + isValidDescription(description)+"\n");
+		}
 	}
 }
