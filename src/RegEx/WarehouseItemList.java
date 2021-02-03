@@ -32,19 +32,27 @@ public class WarehouseItemList {
 				if (i==0) {
 					System.err.print("name: " + name);
 					if (!isValidName(name)) {
-						System.err.print("	contains invalid character - "+name.replaceAll(nameRegex, ""));
+						if (name.length()>3) {
+							System.err.print("	contains invalid character - "+name.replaceAll(nameRegex, ""));
+						}else {
+							System.err.print("	input too short or missing required characters");
+						}
 					}
 				}
 				else if (i==1) {
 					System.err.print("id: " + id);
 					if (!isValidId(id)) {
-						System.err.print("	contains invalid character - "+id.replaceAll(idRegex, ""));
+						System.err.print("	contains invalid character - "+id.replaceAll(idRegex, ""));	
 					}
 				}
 				else if (i==2) {
-					System.err.print("description: " + name);
+					System.err.print("description: " + description);
 					if (!isValidDescription(description)) {
-						System.err.print("	contains invalid character - "+description.replaceAll(desRegex, ""));
+						if (description.length()>6) {
+							System.err.print("	contains invalid character - "+description.replaceAll(desRegex, ""));							
+						}else {
+							System.err.print("	input too short or missing required characters");
+						}
 					}
 				}
 				System.err.println();
