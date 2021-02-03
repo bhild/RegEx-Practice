@@ -14,7 +14,7 @@ public class WarehouseItemList {
 		return name.matches("^([a-zA-Z]|[0-9 -]){3,}$");
 	}
 	public boolean isValidDescription(String des) {
-		return des.matches("^(([a-zA-Z]|[, '-]){5,}[.!;?])+$");
+		return des.matches("^(([a-zA-Z]|[, '-]|(\\(\\))){5,}[.!;?])+$");
 	}
 	public void addItem(String id, String name, String description) {
 		if (isValidId(id)&&isValidDescription(description)&&isValidName(name)) {
