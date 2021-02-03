@@ -24,7 +24,6 @@ public class WarehouseItemList {
 			itemList.add(new String[] {name,id,description});
 		}else {
 			
-			System.err.println("offending characters");
 			//System.err.println("invalid WarehouseItem:\nname: " + name + " - " + isValidName(name)+"\nid: "+
 				//	id + " - " + isValidId(id)+"\ndescription: "+ description + " - " + isValidDescription(description)+"\n");
 			System.err.println("invalid WarehouseItem:");
