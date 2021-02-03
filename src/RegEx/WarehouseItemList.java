@@ -6,7 +6,7 @@ public class WarehouseItemList {
 	private ArrayList<String[]> itemList = new ArrayList<String[]>();
 	private String nameRegex = "([a-zA-Z]|[0-9 -]){3,}";
 	private String idRegex = "([0-9]|[-])+";
-	private String desRegex = "(([a-zA-Z]|[, '-]|(\\(\\))){5,}[.!;?])+";
+	private String desRegex = "(([a-zA-Z]|[, '-]|[\\(\\)]){5,}[.!;?])+";
 	public WarehouseItemList() {
 		// TODO Auto-generated constructor stub
 	}
@@ -48,7 +48,7 @@ public class WarehouseItemList {
 				else if (i==2) {
 					System.err.print("description: " + description);
 					if (!isValidDescription(description)) {
-						if (description.length()>6) {
+						if (description.replaceAll(desRegex, "").length()!=0) {
 							System.err.print("	contains invalid character - "+description.replaceAll(desRegex, ""));							
 						}else {
 							System.err.print("	input too short or missing required characters");
