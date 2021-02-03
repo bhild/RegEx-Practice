@@ -20,12 +20,13 @@ public class WarehouseItemList {
 		return des.matches(desRegex);
 	}
 	public void addItem(String id, String name, String description) {
+		// Variable 1 -- id
+		// Variable 2 -- name
+		// Variable 3 -- description
 		if (isValidId(id)&&isValidDescription(description)&&isValidName(name)) {
-			itemList.add(new String[] {name,id,description});
+			itemList.add(new String[] {name,id,description});//run if all vars are valid
 		}else {
-			
-			//System.err.println("invalid WarehouseItem:\nname: " + name + " - " + isValidName(name)+"\nid: "+
-				//	id + " - " + isValidId(id)+"\ndescription: "+ description + " - " + isValidDescription(description)+"\n");
+			//prints out a syserr for the reason the input is invalid
 			System.err.println("invalid WarehouseItem:");
 			for(int i = 0; i<3;i++) {
 				System.err.print("	");
