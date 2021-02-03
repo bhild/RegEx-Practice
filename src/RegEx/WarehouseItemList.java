@@ -20,8 +20,26 @@ public class WarehouseItemList {
 		if (isValidId(id)&&isValidDescription(description)&&isValidName(name)) {
 			itemList.add(new String[] {name,id,description});
 		}else {
-			System.err.println("invalid WarehouseItem:\nname:" + name + " - " + isValidName(name)+"\nid:"+
-					id + " - " + isValidId(id)+"\ndescription:"+ description + " - " + isValidDescription(description)+"\n");
+			System.err.println("invalid WarehouseItem:\nname: " + name + " - " + isValidName(name)+"\nid: "+
+					id + " - " + isValidId(id)+"\ndescription: "+ description + " - " + isValidDescription(description)+"\n");
 		}
+	}
+	public String[] getItem(int id) {
+		if (id<itemList.size()) {
+			return getItem(id);
+		}
+		return null;
+	}
+	public String toString() {
+		String out = "";
+		out+= "Lenght: " + itemList.size() + "\n";
+		for(String[] i : itemList) {
+			out+= "item: ";
+			for(String j : i) {
+				out+=j+"  |  ";
+			}
+			out+="\n";
+		}
+		return out;
 	}
 }
