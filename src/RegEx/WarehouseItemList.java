@@ -6,7 +6,7 @@ public class WarehouseItemList {
 	private ArrayList<String[]> itemList = new ArrayList<String[]>();
 	private String nameRegex = "([a-zA-Z]|[0-9 -]){3,}";
 	private String idRegex = "([0-9]|[-])+";
-	private String desRegex = "(([a-zA-Z]|[, '-]|[\\(\\)]){5,}[.!;?])+";
+	private String desRegex = "(([a-zA-Z]|[, '-]|[\\(\\)]|[0-9$]|([.]{1}([^ ]{1}|(?!$)))){5,}([.!;?]{1}([ ]{1}|$)))+";
 	public WarehouseItemList() {
 		// TODO Auto-generated constructor stub
 	}
