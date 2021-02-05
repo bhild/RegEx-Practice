@@ -8,7 +8,7 @@ public class WarehouseItemList {
 	//any alphabetical number or dash 3 or more times
 	private String idRegex = "([0-9]|[-])+";
 	//any number or dash one or more times
-	private String desRegex = "(([a-zA-Z]|[, '-]|[\\(\\)]|[0-9$]|([.]{1}([^ ]{1}|(?!$)))){5,}([.!;?]{1}([ ]{1}|$)))+";
+	private String desRegex = "(([a-zA-Z]|[, '-]|[\\(\\)]|[0-9$]|([.]{1}([0-9]{1}))){5,}([.!;?]{1}([ ]{1}|$)))+";
 	// determines any alphanumeric value with comma apostrophe dash parenthesis or $ which must be length 5 or more
 	// then checks to see if there is punctuation followed by ether space or a end line
 	// to allow cash amounts there can be a period that is not followed by an end line or a space
