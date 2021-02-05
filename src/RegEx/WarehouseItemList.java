@@ -5,8 +5,13 @@ import java.util.ArrayList;
 public class WarehouseItemList {
 	private ArrayList<String[]> itemList = new ArrayList<String[]>();
 	private String nameRegex = "([a-zA-Z]|[0-9 -]){3,}";
+	//any alphabetical number or dash 3 or more times
 	private String idRegex = "([0-9]|[-])+";
+	//any number or dash one or more times
 	private String desRegex = "(([a-zA-Z]|[, '-]|[\\(\\)]|[0-9$]|([.]{1}([^ ]{1}|(?!$)))){5,}([.!;?]{1}([ ]{1}|$)))+";
+	// determines any alphanumeric value with comma apostrophe dash parenthesis or $ which must be length 5 or more
+	// then checks to see if there is punctuation followed by ether space or a end line
+	// to allow cash amounts there can be a period that is not followed by an end line or a space
 	public WarehouseItemList() {
 		// TODO Auto-generated constructor stub
 	}
